@@ -1,3 +1,6 @@
+
+// save patient to firestore
+
 saveCustomer=()=>{
     const tempCustomer={
         id: $("#patientId").val(),
@@ -17,7 +20,7 @@ saveCustomer=()=>{
     })
 }
 
-
+// get patient for firestore
 const loadPatient=()=>{
 
     const firestore = firebase.firestore();
