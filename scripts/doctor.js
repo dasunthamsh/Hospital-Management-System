@@ -18,12 +18,16 @@ saveDoctor=()=>{
     }).catch((error)=>{
         console.log(error);
     });
+    loadDoctor();
+
 }
 
 // get doctor for firestore
 
 
 const loadDoctor=()=>{
+
+    $("#tblItemDoctor").empty();
 
     const firestore = firebase.firestore();
     firestore.collection('doctors').get().then((result)=>{
@@ -82,6 +86,16 @@ const updateRecode=()=>{
 
 // delete doctor details
 
-const deleteData=()=>{
+const deleteData=(id)=>{
+
+    if(confirm('are you sure ?')){
+        const firestore = firebase.firestore();
+        firestore.collection('doctors').doc(id).delete().then(()=>{
+            alert("deleted");
+            doctorId=undefined;
+            loadDoctor();
+        })
+
+    }
 
 }
