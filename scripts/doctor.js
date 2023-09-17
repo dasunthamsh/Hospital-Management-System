@@ -91,7 +91,7 @@ const deleteData=(id)=>{
     if(confirm('are you sure ?')){
         const firestore = firebase.firestore();
         firestore.collection('doctors').doc(id).delete().then(()=>{
-            alert("deleted");
+            toastr.success('Deleted')
             doctorId=undefined;
             loadDoctor();
         })
