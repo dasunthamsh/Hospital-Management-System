@@ -36,7 +36,7 @@
 
 </head>
 
-<body>
+<body onload="loadAllPatientIds()">
 
 
 <!--                   patient details-->
@@ -47,7 +47,7 @@
         <div class="col">
             <!-- Combo Box -->
             <div class="form-group">
-                <select class="form-control">
+                <select class="form-control" id="patient-id">
 
                 </select>
             </div>
@@ -110,5 +110,41 @@
         </div>
     </div>
 </div>
+
+<div class="position-relative">
+    <button class="position-relative bg-info" style="left: 90%">Add To List</button>
+</div>
+
+<div class="p-5">
+
+        <table class="table container">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Number</th>
+                <th>Address</th>
+            </tr>
+            </thead>
+            <tbody id="tblOrder">
+            <!-- Customer data rows will be inserted here -->
+            </tbody>
+        </table>
+</div>
+
+<div class="position-relative">
+    <button class="position-relative bg-info" style="left: 90%">Place Order</button>
+
+</div>
+
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script src="scripts/firebase.js"></script>
+<script src="assist/js/jquery-3.6.1.min.js"></script>
+<script src="scripts/place-order.js"></script>
+
+
 </body>
 </html>
