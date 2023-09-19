@@ -1,5 +1,5 @@
 
-// save doctor to firestore
+// save doctors value to firestore
 
 saveDoctor=()=>{
 
