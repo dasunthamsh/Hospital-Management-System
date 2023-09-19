@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="assist/css/bootstrap.min.css">
+
 </head>
 
 <head>
@@ -36,8 +38,8 @@
 
 </head>
 
-<body>
-<div class="container">
+<body onload="loadData()">
+<div class="container p-5">
     <div class="row">
         <table class="table table-hover">
             <thead>
@@ -55,5 +57,13 @@
         </table>
     </div>
 </div>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script src="scripts/firebase.js"></script>
+<script src="assist/js/jquery-3.6.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.js"></script>
+<script src="scripts/channels.js"></script>
+
 </body>
 </html>
