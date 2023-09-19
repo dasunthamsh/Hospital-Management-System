@@ -50,10 +50,44 @@ const updatePatient=(id)=>{
     firestore.collection('patients').doc(patientId).get().then((response)=>{
         if(response.exists){
             const data = response.data();
-            $("#patient-name").val(data.name);
-            $("#patient-number").val(data.number);
-            $("#patient-address ").val(data.address);
+            $("#patientName").val(data.name);
+            $("#patientNumber").val(data.number);
+            $("#patientAddress").val(data.address);
         }
     })
+
+}
+
+// if click update button update firebase patient details
+
+const updatPatienteRecode=()=>{
+
+    if(patientId){
+        const firestore = firebase.firestore();
+        firestore.collection('patients').doc(patientId).update({
+
+            name: $("#patientName").val(),
+            number:$("#patientNumber").val(),
+            address:$("#patientAddress").val()
+        }).then(()=>{
+            patientId=undefined;
+            loadPatient();
+        })
+    }
+}
+
+//delete patient details
+
+const deletePatient=(id)=>{
+
+    if(confirm('are you sure ?')){
+        const firestore = firebase.firestore();
+        firestore.collection('patients').doc(id).delete().then(()=>{
+            toastr.success('Deleted')
+            patientId=undefined;
+            loadPatient();
+        })
+
+    }
 
 }
