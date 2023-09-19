@@ -36,7 +36,7 @@
 
 </head>
 
-<body onload="loadAllPatientIds()">
+<body onload="loadAllPatientIds(),loadAllMedicineCodes()">
 
 
 <!--                   patient details-->
@@ -85,7 +85,7 @@
         <div class="col">
             <!-- Combo Box -->
             <div class="form-group">
-                <select class="form-control">
+                <select class="form-control" id="medicine-id">
 
                 </select>
             </div>

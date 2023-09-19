@@ -34,3 +34,19 @@ firestore.collection('patients').doc(patientid).get().then((response)=>{
 });
 });
 
+
+
+//load medicine ids to combo box when load the page
+
+const loadAllMedicineCodes=()=>{
+
+    const firestore = firebase.firestore();
+    firestore.collection('medicines').get().then((records =>{
+        records.forEach((resault)=>{
+            const option = $("<option></option>").val(resault.id).text(resault.id);
+            $("#medicine-id").append(option);
+
+        })
+    }))
+
+}
