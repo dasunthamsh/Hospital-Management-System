@@ -118,10 +118,14 @@
 </div>
 
 <div class="position-relative">
+
+
     <button class="position-relative bg-info" onclick="addToList()" style="left: 90%">Add To List</button>
+    <input type="text" class="form-control col-1" id="totalCost" style="left: 70%;" placeholder="">
+
 </div>
 
-<div class="p-5">
+<div class="p-3">
 
         <table class="table- container">
             <thead>
@@ -140,7 +144,7 @@
 </div>
 
 <div class="position-relative">
-    <button class="position-relative bg-info" style="left: 90%">Place Order</button>
+    <button class="position-relative bg-info" onclick="placeOrder()" style="left: 90%">Place Order</button>
 
 </div>
 
@@ -150,6 +154,7 @@
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 <script src="scripts/firebase.js"></script>
 <script src="assist/js/jquery-3.6.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.js"></script>
 <script src="scripts/place-order.js"></script>
 
 

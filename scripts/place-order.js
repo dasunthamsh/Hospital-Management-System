@@ -74,6 +74,7 @@ $("#medicine-id").on("change",function (){
 
 })
 
+// add values to table
 
 const addToList=()=>{
 
@@ -108,5 +109,47 @@ const addToList=()=>{
 
 
     });
+        calculateCost();
+}
+
+// get total
+
+const calculateCost=()=>{
+
+    let ttl = 0;
+    orders.forEach(data=>{
+        ttl+=data.totalcost;
+    });
+    $('#totalCost').val(ttl);
+
+}
+
+const placeOrder=()=>{
+
+    const customerId=$('#patient-id').val();
+    let obj={
+        customer:{
+            customerId:customerId,
+            name: $('#patient-name').val(),
+            number:Number.parseInt($('#patient-number').val()),
+            address: $('#patient-address').val(),
+        },
+
+        orderDate:new Date().toISOString().split('T')[0],
+        totalcost: Number.parseInt($('#totalCost').val()),
+        medicine:[]
+    }
+    const firestore = firebase.firestore();
+
+    orders.forEach(data=>{
+       obj.medicine.push(data);
+    });
+
+    firestore.collection('channels').add(obj).then((responce)=>{
+        toastr.success('saved!','success')
+    }).catch((error)=>{
+       console.log(error);
+    });
+
 
 }
