@@ -34,10 +34,10 @@ const loadMedicine=()=>{
     firestore.collection('medicines').get().then((result)=>{
         result.forEach((recodes)=>{
             const data =recodes.data();
-            const row = `<tr><td>${data.code}</td><td>${data.description}</td><td>${data.qyt}</td><td>${data.price}</td><td>
+            const row = `<tr><td>${recodes.id}</td><td>${data.description}</td><td>${data.qyt}</td><td>${data.price}</td><td>
 
-            <button class="bg-danger" onclick="deleteMedicineData('${data.code}')">Delete</button>
-            <button class="bg-success" onclick="updatMedicineeData('${data.code}')">Update</button>
+            <button class="bg-danger" onclick="deleteMedicineData('${recodes.id}')">Delete</button>
+            <button class="bg-success" onclick="updatMedicineeData('${recodes.id}')">Update</button>
 </td></tr>`
 
             $("#tblItemmedicine").append(row);
@@ -80,4 +80,21 @@ const updatMedicineeRecode=()=>{
             loadDoctor();
         })
     }
+}
+
+
+// delete doctor details
+
+const deleteMedicineData=(code)=>{
+
+    if(confirm('are you sure ?')){
+        const firestore = firebase.firestore();
+        firestore.collection('medicines').doc(code).delete().then(()=>{
+            toastr.success('Deleted')
+            medicineCode=undefined;
+            loadMedicine();
+        })
+
+    }
+
 }
