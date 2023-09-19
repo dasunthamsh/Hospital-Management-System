@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="assist/css/bootstrap.min.css">
-
 </head>
+
 <head>
     <nav class="navbar navbar-expand-lg navbar-light bg-info">
         <div class="container">
@@ -14,7 +13,7 @@
             <!-- Navigation Links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link font-weight-bold" href="">Home</a>
+                    <a class="nav-link font-weight-bold" href="dashboard.html">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link font-weight-bold" href="patient.html">Patients</a>
@@ -29,7 +28,7 @@
                     <a class="nav-link font-weight-bold" href="place-order.html">Channel</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link font-weight-bold" href="channels.html">Channel Details</a>
+                    <a class="nav-link font-weight-bold" href="">Channel Details</a>
                 </li>
             </ul>
         </div>
@@ -38,5 +37,23 @@
 </head>
 
 <body>
+<div class="container">
+    <div class="row">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>#Order Id</th>
+                <th>PatientName</th>
+                <th>Date</th>
+                <th>Total</th>
+                <th>Option</th>
+            </tr>
+            </thead>
+            <tbody id="orders-table-body">
+
+            </tbody>
+        </table>
+    </div>
+</div>
 </body>
 </html>
