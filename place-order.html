@@ -79,7 +79,7 @@
 
 <div class="container">
 
-    <h4>Item Details</h4>
+    <h4>Medicines Details</h4>
 
     <div class="row">
         <div class="col">
@@ -93,37 +93,44 @@
         <div class="col">
             <!-- Input Field 1 -->
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Input Field 1">
+                <input type="text" disabled class="form-control" id="description"   placeholder="Description">
             </div>
         </div>
         <div class="col">
             <!-- Input Field 2 -->
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Input Field 2">
+                <input type="text" class="form-control" id="qyt" placeholder="on hand qyt">
             </div>
         </div>
         <div class="col">
             <!-- Input Field 3 -->
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Input Field 3">
+                <input type="text" class="form-control" id="price" placeholder="price">
+            </div>
+        </div>
+        <div class="col">
+            <!-- Input Field 3 -->
+            <div class="form-group">
+                <input type="text" class="form-control" id="buyQyt" placeholder="qyt">
             </div>
         </div>
     </div>
 </div>
 
 <div class="position-relative">
-    <button class="position-relative bg-info" style="left: 90%">Add To List</button>
+    <button class="position-relative bg-info" onclick="addToList()" style="left: 90%">Add To List</button>
 </div>
 
 <div class="p-5">
 
-        <table class="table container">
+        <table class="table- container">
             <thead>
             <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Number</th>
-                <th>Address</th>
+                <th>Code</th>
+                <th>Description</th>
+                <th>Unit Price</th>
+                <th>QYT</th>
+                <th>Total</th>
             </tr>
             </thead>
             <tbody id="tblOrder">
