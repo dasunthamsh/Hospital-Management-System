@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="assist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css" rel="stylesheet">
+
+</head>
+
+<head>
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <div class="container">
+            <img src="https://logowik.com/content/uploads/images/liv-hospital2359.jpg" style="height: 45px">
+
+            <!-- Navigation Links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold" href="#">Patients</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold" href="#">Doctors</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold" href="#">Item</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold" href="#">Channel</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+</head>
+
+<body onload="loadMedicine()">
+<div class="container mt-5">
+    <h2>DOCTOR MANAGE</h2>
+
+    <!-- Form for CRUD operations -->
+    <form id="itemForm">
+
+
+        <div class="form-group">
+            <label for="doctorId">Code:</label>
+            <input type="text" class="form-control" id="doctorId">
+        </div>
+
+        <div class="form-group">
+            <label for="doctorName">Description:</label>
+            <input type="text" class="form-control" id="doctorName">
+        </div>
+
+        <div class="form-group">
+            <label for="doctorNumber">price:</label>
+            <input type="text" class="form-control" id="doctorNumber">
+        </div>
+
+        <div class="form-group">
+            <label for="doctorAddress">qyt:</label>
+            <input type="text" class="form-control" id="doctorAddress">
+        </div>
+
+    </form>
+
+
+    <button type="button" class="btn btn-primary" id="btnSave" onclick="saveMedicine()">Save</button>
+    <button type="button" class="btn btn-primary" id="btnUpdate" onclick="updatMedicineeRecode()">Update</button>
+    <button type="button" class="btn btn-primary" id="btnDelete">Delete</button>
+
+
+    <hr>
+
+    <!-- Table to display customer data -->
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Number</th>
+            <th>Address</th>
+            <th>Options
+            </th>
+
+        </tr>
+        </thead>
+        <tbody id="tblItemmedicine">
+        <!-- Customer data rows will be inserted here -->
+        </tbody>
+    </table>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script src="scripts/firebase.js"></script>
+<script src="assist/js/jquery-3.6.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.js"></script>
+<script src="scripts/medicine.js"></script>
+
+
+
+</body>
