@@ -91,3 +91,20 @@ const deletePatient=(id)=>{
     }
 
 }
+
+// if click update button in table fill the input value in form
+
+doctorId = undefined;
+const updateData=(id)=>{
+    doctorId=id;
+    const firestore = firebase.firestore();
+    firestore.collection('doctors').doc(doctorId).get().then((response)=>{
+        if(response.exists){
+            const data = response.data();
+            $("#doctorName").val(data.name);
+            $("#doctorNumber").val(data.number);
+            $("#doctorAddress").val(data.address);
+        }
+    })
+
+}
